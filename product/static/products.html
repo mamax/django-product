@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Сервіс Обліку Продуктів</title>
+    <meta name="description"
+          value="Система Обліку Продуктів"/>
+    <!-- Include Styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <!--
+    <style type="text/css">.col-xs-12, .col-xs-4, .col-xs-8 {
+        border: 1px solid red;
+    }</style>
+    -->
+</head>
+<body>
+<!-- Start Container -->
+<div class="container">
+    <!-- Start Header -->
+    <div class="row" id="header">
+        <!-- Logo -->
+        <div class="col-xs-8">
+            <h1>Сервіс Обліку Продуктів</h1>
+        </div>
+        <!-- Groups Selector -->
+        <div class="col-xs-4" id="group-selector">
+            <strong>Група:</strong>
+            <select>
+                <option value="">Усі Продукти</option>
+                <option value="">Мясо</option>
+                <option value="">Хліб</option>
+            </select>
+        </div>
+    </div>
+    <!-- End Header -->
+
+    <!-- Start SubHeader
+    <div class="row" id="sub-header">
+        <div class="col-xs-12">
+           <h1>Продукти</h1>
+        </div>
+    </div>
+     End SubHeader -->
+
+    <!-- Start Main Page Content -->
+    <div class="row" id="content-columns">
+        <div class="col-xs-12" id="content-column">
+            <!-- Status Message -->
+            <div class="alert alert-warning">Зміни скасовано.</div>
+                <div class="col-xs-8">
+                    <h2>База Продуктів</h2>
+                </div>
+
+                <div class="col-xs-4">
+                    <!-- Add Student Button -->
+                    <a class="btn btn-primary" href="#">Додати Продукт</a>
+                </div>
+            <div>
+                <table class="table table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <th><a href="#">No</a></th>
+                        <th><a href="#">Назва &uarr;</a></th>
+                        <th><a href="#">Slug</a></th>
+                        <th><a href="#">Опис</a></th>
+                        <th><a href="#">Ціна</a></th>
+                        <th><a href="#">Дата створення</a></th>
+                        <th><a href="#">Дата змінення</a></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><a title="Редагувати" href="#">Bread</a></td>
+                        <td><a title="Редагувати" href="#">Black</a></td>
+                        <td>для їжі</td>
+                        <td>12,3</td>
+                        <td>12.03</td>
+                        <td>17.03</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <nav>
+                <ul class="pagination">
+                    <li><a href="#">&laquo;</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">&raquo;</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- End Main Page Content -->
+
+    <!-- Start Footer -->
+    <div class="row" id="footer">
+        <div class="col-xs-12">
+            &copy; 2015 Сервіс Обліку Продуктів
+        </div>
+    </div>
+    <!-- End Footer -->
+</div>
+
+<!-- End Container -->
+<!-- Javascripts Section -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</body>
+</html>
