@@ -17,5 +17,12 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
+
+    url(r'^$', 'products.views.home', name='home'),
+
+    # Products urls
+    url(r'^products/$', 'products.views.products_list', name='products'),
+
     url(r'^admin/', include(admin.site.urls)),
+
 ]
