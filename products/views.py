@@ -8,3 +8,9 @@ def home(request):
 
 def products_list(request):
     return render(request, 'products/products_list.html', {})
+
+def products_add(request):
+    return HttpResponse('<h1>Add Product</h1>')
+
+def products_edit(request, gid):
+    return HttpResponse('<h1>Edit product %s</h1>' % gid)

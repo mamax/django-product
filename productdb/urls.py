@@ -22,6 +22,8 @@ urlpatterns = [
 
     # Products urls
     url(r'^products/$', 'products.views.products_list', name='products'),
+    url(r'^products/add$', 'products.views.products_add', name='products_add'),
+    url(r'^products/(?P<gid>\d+)/edit/$', 'products.views.products_edit', name='products_edit'),
 
     url(r'^admin/', include(admin.site.urls)),
 
