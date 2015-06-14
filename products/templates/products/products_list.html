@@ -9,7 +9,8 @@
           value="Система Обліку Продуктів"/>
     <!-- Include Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static "css/main.css" %}">
+    <link rel="stylesheet" href="{% static " css
+    /main.css" %}">
     <!--
     <style type="text/css">.col-xs-12, .col-xs-4, .col-xs-8 {
         border: 1px solid red;
@@ -50,14 +51,14 @@
         <div class="col-xs-12" id="content-column">
             <!-- Status Message -->
             <div class="alert alert-warning">Зміни скасовано.</div>
-                <div class="col-xs-8">
-                    <h2>База Продуктів</h2>
-                </div>
+            <div class="col-xs-8">
+                <h2>База Продуктів</h2>
+            </div>
 
-                <div class="col-xs-4">
-                    <!-- Add Student Button -->
-                    <a class="btn btn-primary" href="/products/add">Додати Продукт</a>
-                </div>
+            <div class="col-xs-4">
+                <!-- Add Student Button -->
+                <a class="btn btn-primary" href="/products/add">Додати Продукт</a>
+            </div>
             <div>
                 <table class="table table-hover table-striped">
                     <thead>
@@ -72,24 +73,19 @@
                     </tr>
                     </thead>
                     <tbody>
+                    {% for product in products %}
                     <tr>
-                        <td>1</td>
-                        <td><a title="Редагувати" href="{% url "products_edit" 1 %}">Bread</a></td>
-                        <td><a title="Редагувати" href="{% url "products_edit" 1 %}">Black</a></td>
-                        <td>для їжі</td>
-                        <td>12,3</td>
-                        <td>12.03</td>
-                        <td>17.03</td>
+                        <td>{{ forloop.counter }}</td>
+                        <td><a title="Редагувати" href="{% url "products_edit" product.id %}">{{ product.name }}</a>
+                        </td>
+                        <td><a title="Редагувати" href="{% url "products_edit" product.id %}">{{ product.slug }}</a>
+                        </td>
+                        <td>{{ product.description }}</td>
+                        <td>{{ product.price }}</td>
+                        <td>{{ product.created_at }}</td>
+                        <td>{{ product.modified_at }}</td>
                     </tr>
-                     <tr>
-                        <td>2</td>
-                        <td><a title="Редагувати" href="{% url "products_edit" 2 %}">Meat</a></td>
-                        <td><a title="Редагувати" href="{% url "products_edit" 2 %}">Red</a></td>
-                        <td>для їжі</td>
-                        <td>12,3</td>
-                        <td>12.03</td>
-                        <td>17.03</td>
-                    </tr>
+                    {% endfor %}
                     </tbody>
                 </table>
             </div>
