@@ -63,11 +63,8 @@
                     <tr>
                         <th><a href="#">No</a></th>
                         <th><a href="#">Назва &uarr;</a></th>
-                        <th><a href="#">Slug</a></th>
                         <th><a href="#">Опис</a></th>
                         <th><a href="#">Ціна</a></th>
-                        <th><a href="#">Дата створення</a></th>
-                        <th><a href="#">Дата змінення</a></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -76,12 +73,8 @@
                         <td>{{ forloop.counter }}</td>
                         <td><a title="Редагувати" href="{% url "products_edit" product.id %}">{{ product.name }}</a>
                         </td>
-                        <td><a title="Редагувати" href="{% url "products_edit" product.id %}">{{ product.slug }}</a>
-                        </td>
                         <td>{{ product.description }}</td>
                         <td>{{ product.price }}</td>
-                        <td>{{ product.created_at }}</td>
-                        <td>{{ product.modified_at }}</td>
                     </tr>
                     {% endfor %}
                     </tbody>
