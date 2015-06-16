@@ -17,7 +17,7 @@ first_name = models.CharField(
     verbose_name=u"Назва")
 
 slug = models.SlugField(
-    max_length=56,
+    max_length=50,
     blank=False,
     verbose_name=u"Коротка назва-мітка")
 description = models.CharField(
