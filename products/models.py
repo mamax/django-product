@@ -1,16 +1,21 @@
 # -*- coding: utf-8 -*-
 from django.db import models
-import datetime
 
 # Create your models here.
 class Product(models.Model):
     """Product Model"""
 
 
+class Meta(object):
+    verbose_name = u"Продукт"
+    verbose_name_plural = u"Продукти"
+
+
 name = models.CharField(
     max_length=256,
     blank=False,
     verbose_name=u"Назва")
+
 slug = models.SlugField(
     max_length=256,
     blank=False,
