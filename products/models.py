@@ -39,5 +39,6 @@ modified_at = models.DateField(
     verbose_name=u"Дата змінення",
     default='')
 
+
 def __unicode__(self):
     return u"%s %s" % (self.first_name, self.slug)
