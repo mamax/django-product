@@ -11,13 +11,13 @@ class Meta(object):
     verbose_name_plural = u"Продукти"
 
 
-name = models.CharField(
+first_name = models.CharField(
     max_length=256,
     blank=False,
     verbose_name=u"Назва")
 
 slug = models.SlugField(
-    max_length=256,
+    max_length=56,
     blank=False,
     verbose_name=u"Коротка назва-мітка")
 description = models.CharField(
