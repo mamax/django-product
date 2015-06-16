@@ -1,0 +1,626 @@
+[
+{
+    "fields": {
+        "model": "logentry",
+        "app_label": "admin"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 1
+},
+{
+    "fields": {
+        "model": "permission",
+        "app_label": "auth"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 2
+},
+{
+    "fields": {
+        "model": "group",
+        "app_label": "auth"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 3
+},
+{
+    "fields": {
+        "model": "user",
+        "app_label": "auth"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 4
+},
+{
+    "fields": {
+        "model": "contenttype",
+        "app_label": "contenttypes"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 5
+},
+{
+    "fields": {
+        "model": "session",
+        "app_label": "sessions"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 6
+},
+{
+    "fields": {
+        "model": "product",
+        "app_label": "products"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 7
+},
+{
+    "fields": {
+        "expire_date": "2015-06-30T09:52:36.134Z",
+        "session_data": "NzdkY2Y4NGU4NWVhZjQxMmM1NTBiM2JjNmUxYjgwY2FiMTczNzhmODp7Il9hdXRoX3VzZXJfaGFzaCI6IjI5ODdjMWM4MzZhMmEzMTVmZmNiNWZmMWJkMWRkYWYyODg5Y2YwZWIiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0="
+    },
+    "model": "sessions.session",
+    "pk": "nthdi8t1ze7ky4g1hp7tp7mlbxpc11zm"
+},
+{
+    "fields": {
+        "expire_date": "2015-06-30T05:53:12.800Z",
+        "session_data": "NzdkY2Y4NGU4NWVhZjQxMmM1NTBiM2JjNmUxYjgwY2FiMTczNzhmODp7Il9hdXRoX3VzZXJfaGFzaCI6IjI5ODdjMWM4MzZhMmEzMTVmZmNiNWZmMWJkMWRkYWYyODg5Y2YwZWIiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0="
+    },
+    "model": "sessions.session",
+    "pk": "rgc0j6vevr1d3rxaoc1feqj75lrg9rfg"
+},
+{
+    "fields": {
+        "first_name": "Sauce",
+        "description": "for meat",
+        "price": 12.8,
+        "modified_at": "2015-06-16",
+        "slug": "Tomato-sauce",
+        "created_at": "2015-06-16"
+    },
+    "model": "products.product",
+    "pk": 1
+},
+{
+    "fields": {
+        "first_name": "Meat",
+        "description": "for eating",
+        "price": 98.8,
+        "modified_at": "2015-06-16",
+        "slug": "Beef-meat",
+        "created_at": "2015-06-16"
+    },
+    "model": "products.product",
+    "pk": 2
+},
+{
+    "fields": {
+        "first_name": "Bread",
+        "description": "for eating",
+        "price": 7.87,
+        "modified_at": "2015-06-16",
+        "slug": "Black-usual",
+        "created_at": "2015-06-16"
+    },
+    "model": "products.product",
+    "pk": 3
+},
+{
+    "fields": {
+        "first_name": "product3",
+        "description": "description",
+        "price": 34.9,
+        "modified_at": "2015-06-16",
+        "slug": "test-product",
+        "created_at": "2015-06-16"
+    },
+    "model": "products.product",
+    "pk": 4
+},
+{
+    "fields": {
+        "first_name": "product4",
+        "description": "description",
+        "price": 12.8,
+        "modified_at": "2015-06-16",
+        "slug": "test2-product",
+        "created_at": "2015-06-16"
+    },
+    "model": "products.product",
+    "pk": 5
+},
+{
+    "fields": {
+        "first_name": "product5",
+        "description": "test- descr",
+        "price": 31.09,
+        "modified_at": "2015-06-16",
+        "slug": "prod2",
+        "created_at": "2015-06-16"
+    },
+    "model": "products.product",
+    "pk": 6
+},
+{
+    "fields": {
+        "codename": "add_logentry",
+        "name": "Can add log entry",
+        "content_type": 1
+    },
+    "model": "auth.permission",
+    "pk": 1
+},
+{
+    "fields": {
+        "codename": "change_logentry",
+        "name": "Can change log entry",
+        "content_type": 1
+    },
+    "model": "auth.permission",
+    "pk": 2
+},
+{
+    "fields": {
+        "codename": "delete_logentry",
+        "name": "Can delete log entry",
+        "content_type": 1
+    },
+    "model": "auth.permission",
+    "pk": 3
+},
+{
+    "fields": {
+        "codename": "add_permission",
+        "name": "Can add permission",
+        "content_type": 2
+    },
+    "model": "auth.permission",
+    "pk": 4
+},
+{
+    "fields": {
+        "codename": "change_permission",
+        "name": "Can change permission",
+        "content_type": 2
+    },
+    "model": "auth.permission",
+    "pk": 5
+},
+{
+    "fields": {
+        "codename": "delete_permission",
+        "name": "Can delete permission",
+        "content_type": 2
+    },
+    "model": "auth.permission",
+    "pk": 6
+},
+{
+    "fields": {
+        "codename": "add_group",
+        "name": "Can add group",
+        "content_type": 3
+    },
+    "model": "auth.permission",
+    "pk": 7
+},
+{
+    "fields": {
+        "codename": "change_group",
+        "name": "Can change group",
+        "content_type": 3
+    },
+    "model": "auth.permission",
+    "pk": 8
+},
+{
+    "fields": {
+        "codename": "delete_group",
+        "name": "Can delete group",
+        "content_type": 3
+    },
+    "model": "auth.permission",
+    "pk": 9
+},
+{
+    "fields": {
+        "codename": "add_user",
+        "name": "Can add user",
+        "content_type": 4
+    },
+    "model": "auth.permission",
+    "pk": 10
+},
+{
+    "fields": {
+        "codename": "change_user",
+        "name": "Can change user",
+        "content_type": 4
+    },
+    "model": "auth.permission",
+    "pk": 11
+},
+{
+    "fields": {
+        "codename": "delete_user",
+        "name": "Can delete user",
+        "content_type": 4
+    },
+    "model": "auth.permission",
+    "pk": 12
+},
+{
+    "fields": {
+        "codename": "add_contenttype",
+        "name": "Can add content type",
+        "content_type": 5
+    },
+    "model": "auth.permission",
+    "pk": 13
+},
+{
+    "fields": {
+        "codename": "change_contenttype",
+        "name": "Can change content type",
+        "content_type": 5
+    },
+    "model": "auth.permission",
+    "pk": 14
+},
+{
+    "fields": {
+        "codename": "delete_contenttype",
+        "name": "Can delete content type",
+        "content_type": 5
+    },
+    "model": "auth.permission",
+    "pk": 15
+},
+{
+    "fields": {
+        "codename": "add_session",
+        "name": "Can add session",
+        "content_type": 6
+    },
+    "model": "auth.permission",
+    "pk": 16
+},
+{
+    "fields": {
+        "codename": "change_session",
+        "name": "Can change session",
+        "content_type": 6
+    },
+    "model": "auth.permission",
+    "pk": 17
+},
+{
+    "fields": {
+        "codename": "delete_session",
+        "name": "Can delete session",
+        "content_type": 6
+    },
+    "model": "auth.permission",
+    "pk": 18
+},
+{
+    "fields": {
+        "codename": "add_product",
+        "name": "Can add product",
+        "content_type": 7
+    },
+    "model": "auth.permission",
+    "pk": 19
+},
+{
+    "fields": {
+        "codename": "change_product",
+        "name": "Can change product",
+        "content_type": 7
+    },
+    "model": "auth.permission",
+    "pk": 20
+},
+{
+    "fields": {
+        "codename": "delete_product",
+        "name": "Can delete product",
+        "content_type": 7
+    },
+    "model": "auth.permission",
+    "pk": 21
+},
+{
+    "fields": {
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "is_active": true,
+        "is_superuser": true,
+        "is_staff": true,
+        "last_login": "2015-06-16T09:52:35.866Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$20000$Thlugar5QXbI$EUg5jBoeWw9kc3TO2IlYPjbR8aVxq80t01hUTbbJ86Y=",
+        "email": "admin@admin.com",
+        "date_joined": "2015-06-12T17:59:10.207Z"
+    },
+    "model": "auth.user",
+    "pk": 1
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-06-16T05:58:43.638Z",
+        "object_repr": "Product object",
+        "object_id": "4",
+        "change_message": "",
+        "user": 1,
+        "content_type": 7
+    },
+    "model": "admin.logentry",
+    "pk": 1
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-06-16T05:58:47.897Z",
+        "object_repr": "Product object",
+        "object_id": "3",
+        "change_message": "",
+        "user": 1,
+        "content_type": 7
+    },
+    "model": "admin.logentry",
+    "pk": 2
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-06-16T06:04:32.302Z",
+        "object_repr": "Product object",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 7
+    },
+    "model": "admin.logentry",
+    "pk": 3
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-06-16T06:21:40.464Z",
+        "object_repr": "Product object",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 7
+    },
+    "model": "admin.logentry",
+    "pk": 4
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-06-16T06:21:55.167Z",
+        "object_repr": "Product object",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 7
+    },
+    "model": "admin.logentry",
+    "pk": 5
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-06-16T07:26:08.493Z",
+        "object_repr": "Product object",
+        "object_id": "2",
+        "change_message": "",
+        "user": 1,
+        "content_type": 7
+    },
+    "model": "admin.logentry",
+    "pk": 6
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-06-16T07:27:37.414Z",
+        "object_repr": "Product object",
+        "object_id": "2",
+        "change_message": "",
+        "user": 1,
+        "content_type": 7
+    },
+    "model": "admin.logentry",
+    "pk": 7
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-06-16T07:27:40.592Z",
+        "object_repr": "Product object",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 7
+    },
+    "model": "admin.logentry",
+    "pk": 8
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-06-16T07:35:52.950Z",
+        "object_repr": "Product object",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 7
+    },
+    "model": "admin.logentry",
+    "pk": 9
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-06-16T07:35:58.033Z",
+        "object_repr": "Product object",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 7
+    },
+    "model": "admin.logentry",
+    "pk": 10
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-06-16T11:56:45.744Z",
+        "object_repr": "Product object",
+        "object_id": "2",
+        "change_message": "No fields changed.",
+        "user": 1,
+        "content_type": 7
+    },
+    "model": "admin.logentry",
+    "pk": 11
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-06-16T13:48:00.563Z",
+        "object_repr": "bread black-bread",
+        "object_id": "3",
+        "change_message": "Changed first_name, slug, description, price, created_at and modified_at.",
+        "user": 1,
+        "content_type": 7
+    },
+    "model": "admin.logentry",
+    "pk": 12
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-06-16T13:49:29.035Z",
+        "object_repr": "Meat beef-meat",
+        "object_id": "2",
+        "change_message": "Changed first_name, slug, description, price, created_at and modified_at.",
+        "user": 1,
+        "content_type": 7
+    },
+    "model": "admin.logentry",
+    "pk": 13
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-06-16T13:51:13.426Z",
+        "object_repr": "sauce tomato-sauce",
+        "object_id": "1",
+        "change_message": "Changed first_name, slug, description, price, created_at and modified_at.",
+        "user": 1,
+        "content_type": 7
+    },
+    "model": "admin.logentry",
+    "pk": 14
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-06-16T13:51:20.096Z",
+        "object_repr": "Sauce tomato-sauce",
+        "object_id": "1",
+        "change_message": "Changed first_name.",
+        "user": 1,
+        "content_type": 7
+    },
+    "model": "admin.logentry",
+    "pk": 15
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-06-16T13:52:16.191Z",
+        "object_repr": "Bread Black-usual",
+        "object_id": "3",
+        "change_message": "Changed first_name and slug.",
+        "user": 1,
+        "content_type": 7
+    },
+    "model": "admin.logentry",
+    "pk": 16
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-06-16T13:52:26.261Z",
+        "object_repr": "Meat Beef-meat",
+        "object_id": "2",
+        "change_message": "Changed slug.",
+        "user": 1,
+        "content_type": 7
+    },
+    "model": "admin.logentry",
+    "pk": 17
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-06-16T13:52:35.852Z",
+        "object_repr": "Sauce Tomato-sauce",
+        "object_id": "1",
+        "change_message": "Changed slug.",
+        "user": 1,
+        "content_type": 7
+    },
+    "model": "admin.logentry",
+    "pk": 18
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-06-16T14:11:57.636Z",
+        "object_repr": "product3 test-product",
+        "object_id": "4",
+        "change_message": "",
+        "user": 1,
+        "content_type": 7
+    },
+    "model": "admin.logentry",
+    "pk": 19
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-06-16T14:12:28.375Z",
+        "object_repr": "product4 test2-product",
+        "object_id": "5",
+        "change_message": "",
+        "user": 1,
+        "content_type": 7
+    },
+    "model": "admin.logentry",
+    "pk": 20
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-06-16T14:13:01.773Z",
+        "object_repr": "product5 prod2",
+        "object_id": "6",
+        "change_message": "",
+        "user": 1,
+        "content_type": 7
+    },
+    "model": "admin.logentry",
+    "pk": 21
+}
+]
