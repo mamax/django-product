@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Product
 
 # Create your views here.
@@ -18,6 +19,19 @@ def products_list(request):
         products = products.order_by(order_by)
         if request.GET.get('reverse', '') == '1':
             products = products.reverse()
+
+    # paginate students
+    paginator = Paginator(products, 4)
+    page = request.GET.get('page')
+    try:
+        products = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        products = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver
+        # last page of results.
+        products = paginator.page(paginator.num_pages)
 
     return render(request, 'products/products_list.html', {'products': products})
 
