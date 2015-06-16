@@ -41,4 +41,4 @@ modified_at = models.DateField(
 
 
 def __unicode__(self):
-    return u"%s %s" % (self.name, self.slug)
+    return u"%s %s" % (self.first_name, self.slug)
