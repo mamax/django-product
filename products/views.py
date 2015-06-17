@@ -73,23 +73,22 @@ def products_add(request):
                 try:
                     datetime.strptime(created_at, '%M %d %Y')
                 except Exception:
-                    errors['created_at'] = \
-                        u"Введіть коректний формат дати (напр. June 16, 2015)"
+                    errors['created_at'] = u"Введіть коректний формат дати (напр. June 16, 2015)"
                 else:
                     data['created_at'] = created_at
 
-            ticket = request.POST.get('price', '').strip()
+            price = request.POST.get('price', '').strip()
             if not price:
                 errors['price'] = u"Ціна  є обов'язкова"
             else:
-                data['price'] = ticket
+                data['price'] = price
 
-            # save student
+            # save product
             if not errors:
                 product = Product(**data)
                 product.save()
 
-                # redirect to students list
+                # redirect to products list
                 return HttpResponseRedirect(
                     u'%s?status_message=Продукта успішно додано!' %
                     reverse('products_list'))
