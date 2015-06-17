@@ -37,7 +37,7 @@ def products_list(request):
 
 
 def products_add(request):
-    return HttpResponse('<h1>Add Product</h1>')
+    return render(request, 'products/products_add.html', {})
 
 def products_edit(request, gid):
     return HttpResponse('<h1>Edit product %s</h1>' % gid)
