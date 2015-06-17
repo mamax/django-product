@@ -77,7 +77,21 @@ WSGI_APPLICATION = 'productdb.wsgi.application'
 
 # We moved DATABASES variable to db.py module which added to .gitignore
 # so we don't keep mysql passwords in repository
-from .db import DATABASES
+# from .db import DATABASES
+DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, '..' 'db.sqlite3'),
+    # }
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': 'localhost',
+        'USER': 'products_db_user',
+        'PASSWORD': 'gtnhjdbx',
+        'NAME': 'products_db',
+    }
+}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -97,5 +111,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-
-

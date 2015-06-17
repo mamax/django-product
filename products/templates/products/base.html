@@ -4,17 +4,13 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8"/>
-    <title>Сервіс Обліку Продуктів</title>
-    <meta name="description"
-          value="Система Обліку Продуктів"/>
+    <title>Сервіс Обліку Продуктів -{% block meta_title %}{% endblock meta_title %}</title>
+    <meta name="description" value="Система Обліку продуктів"/>
     <!-- Include Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static "css/main.css" %}">
-    <!--
-    <style type="text/css">.col-xs-12, .col-xs-4, .col-xs-8 {
-        border: 1px solid red;
-    }</style>
-    -->
+    {% block extra_css %}{% endblock extra_css %}
+
 </head>
 <body>
 <!-- Start Container -->
@@ -49,60 +45,13 @@
     <div class="row" id="content-columns">
         <div class="col-xs-12" id="content-column">
             <!-- Status Message -->
-            <div class="alert alert-warning">Зміни скасовано.</div>
-            <div class="col-xs-8">
-                <h2>База Продуктів</h2>
-            </div>
-
-            <div class="col-xs-4">
-                <!-- Add Student Button -->
-                <a class="btn btn-primary" href="{% url "products_add" %}">Додати Продукт</a>
-            </div>
-            <div>
-                <table class="table table-hover table-striped">
-                    <thead>
-                    <tr>
-                        <th><a href="#">No</a></th>
-                        <th><a href="{% url "products" %}?order_by=first_name{% if request.GET.order_by == 'first_name' and request.GET.reverse != '1' %}&amp;reverse=1 {% endif %}"> Назва продукту {% if request.GET.order_by == 'first_name' and request.GET.reverse != '1' %}&uarr;{% elif request.GET.order_by == 'first_name' and request.GET.reverse == '1' %}&darr;{% endif %}</a></th>
-
-                        <th><a href="{% url "products" %}?order_by=description">Опис{% if request.GET.order_by == 'description' %}&uarr;{% endif %}</a></th>
-
-                        <th><a href="{% url "products" %}?order_by=price{% if request.GET.order_by == 'price' and request.GET.reverse != '1' %}&amp;reverse=1{% endif %}">Ціна{% if request.GET.order_by == 'price' and request.GET.reverse != '1' %}&uarr;{% elif request.GET.order_by == 'price' and request.GET.reverse == '1' %}&darr;{% endif %}</a></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {% for product in products %}
-                    <tr>
-                        <td>{{ forloop.counter }}</td>
-                        <td><a title="Редагувати" href="{% url "products_edit" product.id %}">{{ product.first_name }}</a>
-                        </td>
-                        <td>{{ product.description }}</td>
-                        <td>{{ product.price }}</td>
-                    </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-           {% if products.has_other_pages %}
-            {% with order_by=request.GET.order_by reverse=request.GET.reverse %}
-            <nav>
-              <ul class="pagination">
-                <li>
-                  <a href="{% url "products" %}?page=1&amp;order_by={{ order_by }}&amp;reverse={{ reverse }}">&laquo;</a>
-                </li>
-                {% for p in products.paginator.page_range %}
-                <li {% if products.number == p %}class="active"{% endif %}>
-                  <a href="{% url "products" %}?page={{ p }}&amp;order_by={{ order_by }}&amp;reverse={{ reverse }}">{{ p }}</a>
-                </li>
-                {% endfor %}
-                <li>
-                  <a href="{% url "products" %}?page={{ products.paginator.num_pages }}&amp;order_by={{ order_by }}&amp;reverse={{ reverse }}">
-                    &raquo;</a>
-                </li>
-              </ul>
-            </nav>
-            {% endwith %}
-            {% endif %}
+            {% block status_message %}
+                {% if request.GET.status_message %}
+                    <div class="alert alert-warning" role="alert">{{ request.GET.status_message }}</div>
+                {% endif %}
+            {% endblock %}
+            <h2>{% block title %}{% endblock title %}</h2>
+            {% block content %}{% endblock content %}
         </div>
     </div>
     <!-- End Main Page Content -->
@@ -115,10 +64,11 @@
     </div>
     <!-- End Footer -->
 </div>
-
 <!-- End Container -->
+
 <!-- Javascripts Section -->
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
 <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+{% block extra_js %}{% endblock extra_js %}
 </body>
 </html>
