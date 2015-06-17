@@ -2,15 +2,14 @@
 {% load static from staticfiles %}
 {% block meta_title %}База Продуктів{% endblock meta_title %}
 {% block title %}База Продуктів{% endblock title %}
-{% block status_message  %}
-            <div class="alert alert-warning" role="alert">Status Update!</div>
-{% endblock status_message %}
-{% block addbutton %}
-                <a class="btn btn-primary" href="{% url "products_add" %}">Додати Продукт</a>
-{% endblock addbutton %}
+
 {% block content %}
             <!-- add products button-->
-
+               <div class="col-xs-8">
+               </div>
+                <div class="col-xs-4">
+                   <a class="btn btn-primary" href="{% url "products_add" %}">Додати Продукт</a>
+               </div>
                 <!-- Start Students Listing -->
                 <table class="table table-hover table-striped">
                     <thead>

@@ -1,14 +1,18 @@
 # -*- coding: utf-8 -*-
+from datetime import datetime
+
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.core.urlresolvers import reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.forms import ModelForm
+from django.views.generic import UpdateView, DeleteView
 from .models import Product
 
 # Create your views here.
 
 def home(request):
     return render(request, 'products/index.html', {})
-
 
 def products_list(request):
     products = Product.objects.all()
@@ -37,7 +41,71 @@ def products_list(request):
 
 
 def products_add(request):
-    return render(request, 'products/products_add.html', {})
+    # was form posted?
+    if request.method == "POST":
+        # was form add button clicked?
+        if request.POST.get('add_button') is not None:
+            # errors collection
+            errors = {}
+
+            # data for student object
+            data = {'modified_at': request.POST.get('modified_at')}
+            # data = {'middle_name': request.POST.get('middle_name'),
+            #     'notes': request.POST.get('notes')}
+
+            # validate user input
+            first_name = request.POST.get('first_name', '').strip()
+            if not first_name:
+                errors['first_name'] = u"Назва є обов'язковим"
+            else:
+                data['first_name'] = first_name
+
+            slug = request.POST.get('slug', '').strip()
+            if not slug:
+                errors['slug'] = u"Назва-мітка є обов'язковим"
+            else:
+                data['slug'] = slug
+
+            created_at = request.POST.get('created_at', '').strip()
+            if not created_at:
+                errors['created_at'] = u"Дата створення"
+            else:
+                try:
+                    datetime.strptime(created_at, '%M %d %Y')
+                except Exception:
+                    errors['created_at'] = \
+                        u"Введіть коректний формат дати (напр. June 16, 2015)"
+                else:
+                    data['created_at'] = created_at
+
+            ticket = request.POST.get('price', '').strip()
+            if not price:
+                errors['price'] = u"Ціна  є обов'язкова"
+            else:
+                data['price'] = ticket
+
+            # save student
+            if not errors:
+                product = Product(**data)
+                product.save()
+
+                # redirect to students list
+                return HttpResponseRedirect(
+                    u'%s?status_message=Продукта успішно додано!' %
+                    reverse('products_list'))
+            else:
+                # render form with errors and previous user input
+                return render(request, 'products/products_add.html',
+                    {'product': Product.objects.all().order_by('first_name'),
+                     'errors': errors})
+        elif request.POST.get('cancel_button') is not None:
+            # redirect to home page on cancel button
+            return HttpResponseRedirect(
+                u'%s?status_message=Додавання Продукта скасовано!' %
+                reverse('products_list'))
+    else:
+        # initial form render
+        return render(request, 'products/products_add.html', {'products': Product.objects.all().order_by('first_name')})
 
 def products_edit(request, gid):
     return HttpResponse('<h1>Edit product %s</h1>' % gid)
