@@ -106,8 +106,6 @@ def products_add(request):
         # initial form render
         return render(request, 'products/products_add.html', {'products': Product.objects.all().order_by('first_name')})
 
-# def products_edit(request, gid):
-#     return HttpResponse('<h1>Edit product %s</h1>' % gid)
 
 # class ProductUpdateForm(ModelForm):
 #     class Meta:
@@ -120,10 +118,15 @@ class ProductUpdateView(UpdateView):
     fields = ['first_name', 'slug', 'description', 'price', 'created_at', 'modified_at']
     # form_class = ProductUpdateForm
 
+    # @property
+    # def get_success_url(self):
+        # return u'%s?status_message=Студента успішно збережено!' % reverse('products')
     success_url = '/products'
+        # return HttpResponseRedirect(u'%s?status_message=Студента успішно збережено!' % reverse('products'))
 
     def post(self, request, *args, **kwargs):
         if request.POST.get('cancel_button'):
-            return HttpResponseRedirect(reverse('products'))
+            return HttpResponseRedirect(
+                u'%s?status_message=Редагування студента відмінено!' % reverse('products'))
         else:
             return super(ProductUpdateView, self).post(request, *args, **kwargs)
