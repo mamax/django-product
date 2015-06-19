@@ -120,13 +120,13 @@ class ProductUpdateView(UpdateView):
 
     # @property
     # def get_success_url(self):
-        # return u'%s?status_message=Студента успішно збережено!' % reverse('products')
+        # return u'%s?status_message=Продукта успішно збережено!' % reverse('products')
     success_url = '/products'
-        # return HttpResponseRedirect(u'%s?status_message=Студента успішно збережено!' % reverse('products'))
+        # return HttpResponseRedirect(u'%s?status_message=Продукта успішно збережено!' % reverse('products'))
 
     def post(self, request, *args, **kwargs):
         if request.POST.get('cancel_button'):
             return HttpResponseRedirect(
-                u'%s?status_message=Редагування студента відмінено!' % reverse('products'))
+                u'%s?status_message=Редагування продукта відмінено!' % reverse('products'))
         else:
             return super(ProductUpdateView, self).post(request, *args, **kwargs)
