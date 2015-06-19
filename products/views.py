@@ -6,7 +6,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.forms import ModelForm
-from django.views.generic import UpdateView, DeleteView
+from django.views.generic import UpdateView
 from .models import Product
 
 # Create your views here.
@@ -106,5 +106,17 @@ def products_add(request):
         # initial form render
         return render(request, 'products/products_add.html', {'products': Product.objects.all().order_by('first_name')})
 
-def products_edit(request, gid):
-    return HttpResponse('<h1>Edit product %s</h1>' % gid)
+# def products_edit(request, gid):
+#     return HttpResponse('<h1>Edit product %s</h1>' % gid)
+
+class ProductUpdateForm(ModelForm):
+    class Meta:
+        model = Product
+        fields = ['first_name', 'slug', 'description', 'price', 'created_at', 'modified_at']
+
+class ProductUpdateView(UpdateView):
+    model = Product
+    template_name = 'products/products_edit.html'
+    fields = ['first_name', 'slug', 'description', 'price', 'created_at', 'modified_at']
+
+    success_url = '/products'
