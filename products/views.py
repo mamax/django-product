@@ -109,14 +109,21 @@ def products_add(request):
 # def products_edit(request, gid):
 #     return HttpResponse('<h1>Edit product %s</h1>' % gid)
 
-class ProductUpdateForm(ModelForm):
-    class Meta:
-        model = Product
-        fields = ['first_name', 'slug', 'description', 'price', 'created_at', 'modified_at']
+# class ProductUpdateForm(ModelForm):
+#     class Meta:
+#         model = Product
+#         fields = ['first_name', 'slug', 'description', 'price', 'created_at', 'modified_at']
 
 class ProductUpdateView(UpdateView):
     model = Product
     template_name = 'products/products_edit.html'
     fields = ['first_name', 'slug', 'description', 'price', 'created_at', 'modified_at']
+    # form_class = ProductUpdateForm
 
     success_url = '/products'
+
+    def post(self, request, *args, **kwargs):
+        if request.POST.get('cancel_button'):
+            return HttpResponseRedirect(reverse('products'))
+        else:
+            return super(ProductUpdateView, self).post(request, *args, **kwargs)
