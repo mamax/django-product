@@ -116,13 +116,9 @@ class ProductUpdateView(UpdateView):
     model = Product
     template_name = 'products/products_edit.html'
     fields = ['first_name', 'slug', 'description', 'price', 'created_at', 'modified_at']
-    # form_class = ProductUpdateForm
 
-    # @property
-    # def get_success_url(self):
-        # return u'%s?status_message=Продукта успішно збережено!' % reverse('products')
-    success_url = '/products'
-        # return HttpResponseRedirect(u'%s?status_message=Продукта успішно збережено!' % reverse('products'))
+    def get_success_url(self):
+        return u'%s?status_message=Продукт успішно збережено!' % reverse('products')
 
     def post(self, request, *args, **kwargs):
         if request.POST.get('cancel_button'):
